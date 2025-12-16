@@ -1,0 +1,50 @@
+name: Agent CI/CD
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-test-eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install jsonschema
+
+      - name: Validate manifests
+        run: python scripts/validate_manifests.py
+
+      - name: Run evals
+        run: python evals/run_evals.py
+
+  deploy-dev:
+    if: github.ref == 'refs/heads/main'
+    needs: build-test-eval
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/deploy-dev.sh
+
+  deploy-test:
+    needs: deploy-dev
+    runs-on: ubuntu-latest
+    environment: test   # 👈 approval gate
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/deploy-test.sh
+
+  deploy-prod:
+    needs: deploy-test
+    runs-on: ubuntu-latest
+    environment: prod   # 👈 approval gate
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/deploy-prod.sh
