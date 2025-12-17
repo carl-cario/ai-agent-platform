@@ -51,6 +51,12 @@ jobs:
     environment: test
     steps:
       - uses: actions/checkout@v4
+
+      - name: Azure Login (TEST)
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - run: bash scripts/deploy-test.sh
 
   deploy-prod:
@@ -59,4 +65,10 @@ jobs:
     environment: prod
     steps:
       - uses: actions/checkout@v4
+
+      - name: Azure Login (PROD)
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - run: bash scripts/deploy-prod.sh
