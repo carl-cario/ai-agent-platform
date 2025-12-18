@@ -1,0 +1,9 @@
+{
+  "name": "tnt-onboarding",
+  "model": "gpt-4o-mini",
+  "systemPrompt": "prompts/system.txt",
+  "tools": ["config-generator"],
+  "inputs": ["carrier_details"],
+  "outputs": ["tnt_config"]
+}
+

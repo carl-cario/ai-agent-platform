@@ -1,69 +1,48 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Agent Manifest Schema",
+  "title": "AI Agent Manifest",
   "type": "object",
   "required": [
     "name",
-    "description",
     "model",
     "systemPrompt",
+    "tools",
     "inputs",
-    "outputs",
-    "tools"
+    "outputs"
   ],
   "properties": {
     "name": {
       "type": "string",
-      "pattern": "^[a-z0-9-]+$"
-    },
-    "description": {
-      "type": "string"
+      "description": "Unique agent name"
     },
     "model": {
-      "type": "string"
+      "type": "string",
+      "description": "LLM model used by the agent"
     },
     "systemPrompt": {
-      "type": "string"
+      "type": "string",
+      "description": "Path to system prompt file (e.g. prompts/system.txt)"
+    },
+    "tools": {
+      "type": "array",
+      "description": "List of tools the agent can use",
+      "items": {
+        "type": "string"
+      }
     },
     "inputs": {
       "type": "array",
-      "minItems": 1,
+      "description": "Expected input fields",
       "items": {
-        "type": "object",
-        "required": ["name", "type"],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": ["string", "number", "boolean", "object"]
-          },
-          "required": {
-            "type": "boolean"
-          }
-        }
+        "type": "string"
       }
     },
     "outputs": {
       "type": "array",
-      "minItems": 1,
+      "description": "Expected output fields",
       "items": {
-        "type": "object",
-        "required": ["name", "type"],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": ["string", "number", "boolean", "object"]
-          }
-        }
+        "type": "string"
       }
-    },
-    "tools": {
-      "type": "array"
     }
   },
   "additionalProperties": false

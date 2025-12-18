@@ -4,8 +4,15 @@ from pathlib import Path
 
 # Replace this with a real API call to your agent
 def call_agent(agent_name, input_dict):
-    # Example: just echo input for now
-    return f"Echo: {input_dict.get('input_text', '')}"
+    """
+    Mock agent call.
+    Echoes all input fields so evals can validate expected phrases.
+    """
+    echoed_parts = []
+    for key, value in input_dict.items():
+        echoed_parts.append(f"{key}: {value}")
+
+    return "Echo: " + " | ".join(echoed_parts)
 
 def run_agent_eval(agent_name):
     eval_dir = Path(f"agents/{agent_name}/evals")

@@ -1,0 +1,42 @@
+[
+  {
+    "input": { "issue_summary": "Customer requesting proof of delivery", "tone": "polite" },
+    "expected_output_contains": ["proof of delivery"]
+  },
+  {
+    "input": { "issue_summary": "Shipment delayed due to weather", "tone": "empathetic" },
+    "expected_output_contains": ["delay", "weather"]
+  },
+  {
+    "input": { "issue_summary": "Incorrect invoice amount charged", "tone": "professional" },
+    "expected_output_contains": ["invoice"]
+  },
+  {
+    "input": { "issue_summary": "Customer asking for ETA update", "tone": "friendly" },
+    "expected_output_contains": ["update"]
+  },
+  {
+    "input": { "issue_summary": "Package marked delivered but not received", "tone": "empathetic" },
+    "expected_output_contains": ["package", "delivered"]
+  },
+  {
+    "input": { "issue_summary": "Request to change delivery address", "tone": "polite" },
+    "expected_output_contains": ["address"]
+  },
+  {
+    "input": { "issue_summary": "Customer unhappy with service experience", "tone": "empathetic" },
+    "expected_output_contains": ["service", "experience", "unhappy"]
+  },
+  {
+    "input": { "issue_summary": "Need resend invoice copy", "tone": "professional" },
+    "expected_output_contains": ["invoice", "copy"]
+  },
+  {
+    "input": { "issue_summary": "Customer asking about customs delay", "tone": "informative" },
+    "expected_output_contains": ["customs", "delay"]
+  },
+  {
+    "input": { "issue_summary": "Thank customer for continued business", "tone": "friendly" },
+    "expected_output_contains": ["thank", "business"]
+  }
+]

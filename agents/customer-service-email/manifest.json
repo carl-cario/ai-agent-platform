@@ -1,0 +1,8 @@
+{
+  "name": "customer-service-email",
+  "model": "gpt-4o-mini",
+  "systemPrompt": "prompts/system.txt",
+  "tools": [],
+  "inputs": ["issue_summary", "tone"],
+  "outputs": ["email_draft"]
+}

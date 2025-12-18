@@ -1,0 +1,42 @@
+[
+  {
+    "input": { "request": "Create TNT carrier configuration" },
+    "expected_output_contains": ["TNT", "configuration"]
+  },
+  {
+    "input": { "request": "Steps to onboard TNT as a carrier" },
+    "expected_output_contains": ["steps", "TNT"]
+  },
+  {
+    "input": { "request": "What credentials are required for TNT integration?" },
+    "expected_output_contains": ["credentials", "TNT"]
+  },
+  {
+    "input": { "request": "Explain TNT label generation setup" },
+    "expected_output_contains": ["label", "generation", "setup"]
+  },
+  {
+    "input": { "request": "TNT tracking configuration instructions" },
+    "expected_output_contains": ["tracking", "configuration", "TNT"]
+  },
+  {
+    "input": { "request": "How to test TNT carrier connection" },
+    "expected_output_contains": ["test", "connection", "TNT"]
+  },
+  {
+    "input": { "request": "TNT service codes explanation" },
+    "expected_output_contains": ["service", "codes", "TNT"]
+  },
+  {
+    "input": { "request": "Sandbox vs production setup for TNT" },
+    "expected_output_contains": ["sandbox", "production"]
+  },
+  {
+    "input": { "request": "Common errors during TNT onboarding" },
+    "expected_output_contains": ["errors", "onboarding"]
+  },
+  {
+    "input": { "request": "Security considerations for TNT integration" },
+    "expected_output_contains": ["security"]
+  }
+]
