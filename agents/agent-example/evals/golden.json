@@ -1,0 +1,8 @@
+{
+  "input": {
+    "input_text": "Evaluation input"
+  },
+  "expected_output_contains": [
+    "expected phrase"
+  ]
+}

@@ -27,7 +27,7 @@ jobs:
         run: python scripts/validate_manifests.py
 
       - name: Run evals
-        run: python evals/run_evals.py
+        run: python evals/engine/run_evals.py
 
   deploy-dev:
     if: github.ref == 'refs/heads/main'

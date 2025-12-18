@@ -1,0 +1,6 @@
+{
+  "input": {
+    "customer_message": "Can you send me a copy of my invoice?"
+  },
+  "expected_behavior": "Politely acknowledge the request and explain the next steps."
+}

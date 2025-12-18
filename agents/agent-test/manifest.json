@@ -1,0 +1,20 @@
+{
+  "name": "agent-test",
+  "description": "Test agent used to validate the agent framework",
+  "model": "gpt-4o-mini",
+  "systemPrompt": "prompts/system.txt",
+  "inputs": [
+    {
+      "name": "input_text",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "response_text",
+      "type": "string"
+    }
+  ],
+  "tools": []
+}
