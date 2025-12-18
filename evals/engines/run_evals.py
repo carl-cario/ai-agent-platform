@@ -2,7 +2,7 @@ import json
 import os
 from pathlib import Path
 
-# Mock call to your agent API — replace with real API call
+# Replace this with a real API call to your agent
 def call_agent(agent_name, input_dict):
     # Example: just echo input for now
     return f"Echo: {input_dict.get('input_text', '')}"

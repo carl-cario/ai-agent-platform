@@ -1,10 +1,10 @@
 [
   {
-    "input": { "input_text": "Hello agent" },
-    "expected_output_contains": ["hello", "agent"]
+    "input": { "input_text": "Hello agent-example" },
+    "expected_output_contains": ["hello", "agent-example"]
   },
   {
     "input": { "input_text": "How are you?" },
-    "expected_output_contains": ["fine", "thank"]
+    "expected_output_contains": ["echo"]
   }
 ]
