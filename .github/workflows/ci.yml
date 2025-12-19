@@ -35,9 +35,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy Core
-        run: |
-          chmod +x scripts/deploy-dev.sh
-          ./scripts/deploy-dev.sh
+        run: bash scripts/deploy-dev.sh
 
 
 
