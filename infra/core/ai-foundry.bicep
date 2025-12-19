@@ -8,4 +8,8 @@ resource openai 'Microsoft.CognitiveServices/accounts@2023-05-01' = {
   sku: {
     name: 'S0'
   }
+  properties: {
+    // Required property for OpenAI
+    publicNetworkAccess: 'Enabled'
+  }
 }
