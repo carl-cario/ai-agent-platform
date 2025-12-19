@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": { "value": "australiaeast" },
+    "storageName": { "value": "carioaistoragedev" },
+    "keyVaultName": { "value": "cario-ai-vault-dev" },
+    "appInsightsName": { "value": "cario-ai-insights-dev" },
+    "appConfigName": { "value": "cario-appconfig-dev" },
+    "aiFoundryName": { "value": "cario-aifoundry-dev-01" }
+  }
+}
