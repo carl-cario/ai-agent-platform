@@ -36,8 +36,8 @@ jobs:
 
       - name: Deploy Core
         run: |
-          chmod +x scripts/deploy-core.sh
-          ./scripts/deploy-core.sh
+          chmod +x scripts/deploy-dev.sh
+          ./scripts/deploy-dev.sh
 
 
 
