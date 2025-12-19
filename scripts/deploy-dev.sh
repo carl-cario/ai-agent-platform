@@ -1,23 +1,14 @@
 #!/usr/bin/env bash
 set -e
 
-# --- Environment ---
-ENVIRONMENT="dev"
+# --- Configuration ---
 RESOURCE_GROUP="rg-ai-core"
 TEMPLATE_FILE="infra/core/main.bicep"
 PARAMS_FILE="infra/params/dev.json"
+ENVIRONMENT="dev"  # used in deploy_agent.py
 
-# --- Azure login ---
-echo "🔑 Logging in to Azure..."
-az login --service-principal \
-    -u $AZURE_CLIENT_ID \
-    -p $AZURE_CLIENT_SECRET \
-    --tenant $AZURE_TENANT_ID
-
-az account set --subscription $AZURE_SUBSCRIPTION_ID
-
-# --- Deploy infra ---
-echo "🚀 Deploying Dev infrastructure..."
+# --- Deploy infrastructure ---
+echo "🚀 Deploying infrastructure to $RESOURCE_GROUP..."
 az group create --name "$RESOURCE_GROUP" --location australiaeast
 
 az deployment group create \
@@ -25,10 +16,10 @@ az deployment group create \
   --template-file "$TEMPLATE_FILE" \
   --parameters @"$PARAMS_FILE"
 
-echo "✅ Dev infrastructure deployed"
+echo "✅ Infrastructure deployed to $RESOURCE_GROUP"
 
-# --- Deploy agents ---
-echo "📦 Deploying agents to Dev..."
+# --- Deploy all agents ---
+echo "📦 Deploying agents to $RESOURCE_GROUP..."
 for agent in agents/*; do
   if [ -d "$agent" ]; then
     AGENT_NAME=$(basename "$agent")
@@ -37,4 +28,4 @@ for agent in agents/*; do
   fi
 done
 
-echo "🧠 Agents deployed to DEV successfully ✅"
+echo "🧠 All agents deployed successfully to $RESOURCE_GROUP ✅"
