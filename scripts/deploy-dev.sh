@@ -11,9 +11,9 @@ ENVIRONMENT="dev"  # used in deploy_agent.py
 echo "🚀 Deploying infrastructure to $RESOURCE_GROUP..."
 az group create --name "$RESOURCE_GROUP" --location australiaeast
 
-az deployment group create `
-  --resource-group "$RESOURCE_GROUP" `
-  --template-file "$TEMPLATE_FILE" `
+az deployment group create \
+  --resource-group "$RESOURCE_GROUP" \
+  --template-file "$TEMPLATE_FILE" \
   --parameters @"$PARAMS_FILE"
 
 echo "✅ Infrastructure deployed to $RESOURCE_GROUP"

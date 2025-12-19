@@ -7,9 +7,9 @@ TEMPLATE_FILE="infra/core/main.bicep"
 PARAMS_FILE="infra/params/test.json"
 
 # Azure login
-az login --service-principal `
-    -u $AZURE_CLIENT_ID `
-    -p $AZURE_CLIENT_SECRET `
+az login --service-principal \
+    -u $AZURE_CLIENT_ID \
+    -p $AZURE_CLIENT_SECRET \
     --tenant $AZURE_TENANT_ID
 
 az account set --subscription $AZURE_SUBSCRIPTION_ID
@@ -18,8 +18,8 @@ az account set --subscription $AZURE_SUBSCRIPTION_ID
 az group create --name "$RESOURCE_GROUP" --location australiaeast
 
 az deployment group create `
-  --resource-group "$RESOURCE_GROUP" `
-  --template-file "$TEMPLATE_FILE" `
+  --resource-group "$RESOURCE_GROUP" \
+  --template-file "$TEMPLATE_FILE" \
   --parameters @"$PARAMS_FILE"
 
 echo "✅ Test infrastructure deployed"
